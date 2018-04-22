@@ -25,10 +25,23 @@
     <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
         <div class="col-md-4 px-0">
           <center>
-            <p class="lead my-3">Your Sentiment Score</p>
+            <h1 style="font-size:50px;font-weight:heavy;" class="lead my-3">SENTIMENTLY</h1>
+
+            <p class="lead my-3">Your Average Sentiment Score:</p>
             <h1 class="display-4 font-italic">
-              <div id='message'>Calculating....</div>
+              <div id='average'>Getting...</div>
             </h1>
+            <img id="user_average_emoji" style="width:50px;" src="emojis/0.0.png"/>
+            <hr></hr>
+            <p class="lead my-3">This page's sentiment score:</p>
+            <h1 class="display-4 font-italic">
+
+            <div id='message'>Calculating....</div>
+
+            <img id="page_emoji" style="width:50px;" src="emojis/0.0.png"/>
+
+          </h1>
+
           </center>
           <!-- <h1 class="display-4 font-italic">100</h1> -->
         </div>
@@ -39,7 +52,7 @@
       <div class="Content">
 
 
-    <div class="content">
+    <div class="content" style="font-family:Raleway;">
       <div class = "wrap"  ng-cloak="" class="carddemoInCardActions" ng-app="MyApp">
         <md-content class="md-padding" layout-xs="column" layout="row">
           <div flex-xs="" flex-gt-xs="30" layout="column">
@@ -53,28 +66,31 @@
               <div  ng-cloak="" layout-gt-sm="row" layout="column" class="listdemoBasicUsage" ng-app="MyApp">
               <div style ="width:100%;">
 
-                <md-toolbar layout="row" class="md-hue-3">
-                  <div class="md-toolbar-tools">
-                    <span>New York Times Mentions</span>
-                  </div>
-                </md-toolbar>
 
                 <md-content>
                   <md-list flex="">
-                    <md-subheader class="md-no-sticky">Articles that Kamala was mentioned in.</md-subheader>
-                    <md-list-item class="md-3-line"  ng-click="null" style="background-color:white;" onclick="window.open('http://www.latimes.com/politics/essential/la-pol-ca-essential-politics-updates-here-s-another-glimpse-of-kamala-harris-1520551387-htmlstory.html);">
+                    <md-subheader class="md-no-sticky">Some uplifting news (just for you :).</md-subheader>
+                    <md-list-item class="md-3-line"  ng-click="null" style="background-color:white;" onclick="window.open('https://www.nytimes.com/2018/01/27/business/its-not-a-roar-but-the-global-economy-is-finally-making-noise.html');">
                       <div class="md-list-item-text" layout="column">
-                        <h3>Here's another glimpse of Kamala Harris' finances as she looks to 2020</h3>
-                        <h4>By The LA TIMES</h4>
-                        <p>California Sen. Kamala Harris, who is serving her first term, has an estimated net worth that puts her financially near the middle of the pack in a delegation that includes both the richest and poorest members of Congress.</p>
+                        <h3><a href = "https://www.nytimes.com/2018/01/27/business/its-not-a-roar-but-the-global-economy-is-finally-making-noise.html">Every One of the Worlds Big Economies Is Now Growing</a></h3>
+                        <h4>By The NY TIMES</h4>
+                        <p>LONDON — A decade after the world descended into a devastating economic crisis, a key marker of revival has finally been achieved. Every major economy on earth is expanding at once, a synchronous wave of growth that is creating jobs, lifting fortunes and tempering fears of popular discontent...</p>
                       </div>
                     </md-list-item>
                     <hr></hr>
-                    <md-list-item class="md-3-line"  ng-click="null" style="background-color:white;" onclick="window.open('https://www.realclearpolitics.com/video/2018/03/08/kamala_harris_on_immigration_sessions_wants_to_roll_back_the_clock_california_represents_the_future_.html');">
+                    <md-list-item class="md-3-line"  ng-click="null" style="background-color:white;" onclick="window.open('https://www.nytimes.com/2018/01/27/business/its-not-a-roar-but-the-global-economy-is-finally-making-noise.html');">
                       <div class="md-list-item-text" layout="column">
-                        <h3>Kamala Harris On Immigration: Sessions Wants To Roll Back The Clock, "California Represents The Future"</h3>
-                        <h4>By REALCLEAR POLITICS</h4>
-                        <p>Sen. Kamala Harris (D-CA) appeared on MSNBC's All In with host Chris Hayes Wednesday night to discuss Attorney General Jeff Sessions' speech on California ignoring the nation's immigration laws and likening it to nullification.</p>
+                        <h3><a href = "https://www.nytimes.com/2018/01/28/sports/tennis/australian-open-roger-federer-marin-cilic.html">Roger Federer Wins the Australian Open for His 20th Grand Slam Title</a></h3>
+                        <h4>By The NY TIMES</h4>
+                        <p>MELBOURNE, Australia — There were tears, but that was to be expected from Roger Federer at the Australian Open. In the end, the most remarkable part of his 20th Grand Slam singles title was that it came as no surprise. Not even at age 36 in a sport where the spoils have generally been reserved for a much younger crowd...</p>
+                      </div>
+                    </md-list-item>
+                    <hr></hr>
+                    <md-list-item class="md-3-line"  ng-click="null" style="background-color:white;" onclick="window.open('https://www.nytimes.com/2018/01/27/business/its-not-a-roar-but-the-global-economy-is-finally-making-noise.html');">
+                      <div class="md-list-item-text" layout="column">
+                        <h3><a href = "https://www.nytimes.com/2018/01/27/business/mind-meld-bill-gates-steven-pinker.html">The Mind Meld of Bill Gates and Steven Pinker</a></h3>
+                        <h4>By The NY TIMES</h4>
+                        <p>The first two things you notice when you walk into Bill Gates’s private office, just outside Seattle, are a wall-size installation of the periodic table with a sample of each chemical element in its own glass-fronted vitrine and handsome bookshelves that reach nearly to the ceiling...</p>
                       </div>
                     </md-list-item>
 

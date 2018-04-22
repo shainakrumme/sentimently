@@ -10,10 +10,16 @@ subscription_key = "592b4136ebff42608f4ca5e1b661d087";
 
     text = document.body.innerText;
     arr = text.split(".");
+    updated_arr = [];
+    for(j = 0; j<arr.length; j++){
+      if(arr[j].length>10){
+      updated_arr.push(arr[j]);
+    }
+    }
 var i;
 scores = [];
     documents={'documents':[]};
-for (i= 0;i<arr.length; i++){ //adding all sentences to the "document" dictionary
+for (i= 0;i<updated_arr.length; i++){ //adding all sentences to the "document" dictionary
 
    
 
@@ -22,7 +28,7 @@ for (i= 0;i<arr.length; i++){ //adding all sentences to the "document" dictionar
 
 
    // sentiment_api_url = text_analytics_base_url + "sentiment";
-    documents['documents'].push({'id': i.toString(), 'language': 'en', 'text': arr[i]});
+    documents['documents'].push({'id': i.toString(), 'language': 'en', 'text': updated_arr[i]});
 
 
 //     headers   = {"Ocp-Apim-Subscription-Key": subscription_key}
@@ -60,12 +66,70 @@ xhr.send( json_docs);
 
     final_calc =senti_calculation(scores);
     console.log("FINAL CALC **: ", final_calc);
-    return final_calc
 
-    // chrome.storage.sync.set({key: value}, function() {
-    //       console.log('Value is set to ' + value);
-    //     });
+    temp = "";
 
+
+
+
+
+//  chrome.storage.local.set({ "articles":[0.5]}, function() {
+    chrome.storage.local.get( "articles", function(result) {
+      console.log('here is result: ', result);
+      temp= result['articles'];
+      temp.push(final_calc);
+      console.log("here is the pushed array: ", temp);
+
+      var sum = 0;
+for( var i = 0; i < temp.length; i++ ){
+    sum += temp[i]; //don't forget to add the base
+}
+
+var avg = sum/temp.length;
+document.getElementById('average').innerText= avg;
+  console.log("HERE IS AVERAGE THUS FAR: ", avg);
+
+      chrome.storage.local.set({ "articles":temp}, function() {
+        console.log('The sentiment of this page has been recorded.');
+       });
+     });
+
+
+
+      console.log('The sentiment of this page has been recorded.');
+    // });
+//******
+
+
+
+
+//first element is current page, second eelement is average sentiment
+avg = 50+(final_calc/5);
+    return [final_calc, avg, getEmoji(final_calc),getEmoji(avg)] //YOU NEED TO CHNAGE THIS VALUE
+}
+
+function getEmoji(num){
+  if(num<10){
+    return '0.0.png';
+  }
+  else if (num<20){
+    return '0.2.png';
+  }
+  else if (num<40){
+    return '0.4.png';
+  }
+  else if (num<50){
+    return '0.5.png';
+  }
+  else if (num<60){
+    return '0.6.png';
+  }
+  else if (num<80){
+    return '0.8.png';
+  }
+  else if (num<100){
+    return '1.png';
+  }
 }
 
 function senti_calculation(text_arr) {
