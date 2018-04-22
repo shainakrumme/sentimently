@@ -117,10 +117,10 @@ function getEmoji(num){
   else if (num<40){
     return '0.4.png';
   }
-  else if (num<50){
+  else if (num<60){
     return '0.5.png';
   }
-  else if (num<60){
+  else if (num<70){
     return '0.6.png';
   }
   else if (num<80){
@@ -171,6 +171,12 @@ function senti_calculation(text_arr) {
     calculation = sum / (1.0 * length);
     // Turns calculation into an integer 0-100
     calculation = Math.round(calculation * 100);
+    if (calculation<49 && calculation>20){
+      calculation-=17;
+    }
+    else if( calculation>55 && calculation<65){
+      calculation+=15;
+    }
     console.log("here is the calculation: ", calculation);
     return calculation
 
