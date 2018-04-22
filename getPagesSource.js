@@ -86,7 +86,6 @@ for( var i = 0; i < temp.length; i++ ){
 }
 
 var avg = sum/temp.length;
-document.getElementById('average').innerText= avg;
   console.log("HERE IS AVERAGE THUS FAR: ", avg);
 
       chrome.storage.local.set({ "articles":temp}, function() {
