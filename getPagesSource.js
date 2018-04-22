@@ -106,6 +106,8 @@ function senti_calculation(text_arr) {
         i++;
     }
     calculation = sum / (1.0 * length);
+    // Turns calculation into an integer 0-100
+    calculation = Math.round(calculation * 100);
     console.log("here is the calculation: ", calculation);
     return calculation
 
