@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="/css/bootstrap-theme.css">
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/scrollbar.css">
+    <link rel="stylesheet" href="/css/custom.css">
     <!-- Scripts -->
     <script src='popup.js'></script>
     <script src='index.js'></script>
@@ -23,11 +24,19 @@
 
     <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
         <div class="col-md-4 px-0">
-          <p class="lead my-3">Your Sentiment Score</p>
-          <div id='message'>Injecting Script....</div>
-          <h1 class="display-4 font-italic">100</h1>
+          <center>
+            <p class="lead my-3">Your Sentiment Score</p>
+            <h1 class="display-4 font-italic">
+              <div id='message'>Calculating....</div>
+            </h1>
+          </center>
+          <!-- <h1 class="display-4 font-italic">100</h1> -->
         </div>
     </div>
+
+    <div class="FixedHeightContainer">
+      <!-- <h2>Title</h2> -->
+      <div class="Content">
 
 
     <div class="content">
@@ -39,40 +48,48 @@
                 <div  ng-cloak="" layout-gt-sm="row" layout="column" class="listdemoBasicUsage" >
                 <div style ="width:100%;">
 
-                  <md-toolbar layout="row" class="md-hue-3">
-                    <div class="md-toolbar-tools">
-                      <span>New York Times Mentions</span>
-                    </div>
-                  </md-toolbar>
+        <!-- Articles -->
+        <md-card>
+              <div  ng-cloak="" layout-gt-sm="row" layout="column" class="listdemoBasicUsage" ng-app="MyApp">
+              <div style ="width:100%;">
 
-                  <md-content>
-                    <md-list flex="">
-                      <md-subheader class="md-no-sticky">Articles that Kamala was mentioned in.</md-subheader>
-                      <md-list-item class="md-3-line"  ng-click="null" style="background-color:white;" onclick="window.open('http://www.latimes.com/politics/essential/la-pol-ca-essential-politics-updates-here-s-another-glimpse-of-kamala-harris-1520551387-htmlstory.html);">
-                        <div class="md-list-item-text" layout="column">
-                          <h3>Here's another glimpse of Kamala Harris' finances as she looks to 2020</h3>
-                          <h4>By The LA TIMES</h4>
-                          <p>California Sen. Kamala Harris, who is serving her first term, has an estimated net worth that puts her financially near the middle of the pack in a delegation that includes both the richest and poorest members of Congress.</p>
-                        </div>
-                      </md-list-item>
-                      <hr></hr>
-                      <md-list-item class="md-3-line"  ng-click="null" style="background-color:white;" onclick="window.open('https://www.realclearpolitics.com/video/2018/03/08/kamala_harris_on_immigration_sessions_wants_to_roll_back_the_clock_california_represents_the_future_.html');">
-                        <div class="md-list-item-text" layout="column">
-                          <h3>Kamala Harris On Immigration: Sessions Wants To Roll Back The Clock, "California Represents The Future"</h3>
-                          <h4>By REALCLEAR POLITICS</h4>
-                          <p>Sen. Kamala Harris (D-CA) appeared on MSNBC's All In with host Chris Hayes Wednesday night to discuss Attorney General Jeff Sessions' speech on California ignoring the nation's immigration laws and likening it to nullification.</p>
-                        </div>
-                      </md-list-item>
+                <md-toolbar layout="row" class="md-hue-3">
+                  <div class="md-toolbar-tools">
+                    <span>New York Times Mentions</span>
+                  </div>
+                </md-toolbar>
 
-                    </md-list>
-                  </md-content>
-                </div>
+                <md-content>
+                  <md-list flex="">
+                    <md-subheader class="md-no-sticky">Articles that Kamala was mentioned in.</md-subheader>
+                    <md-list-item class="md-3-line"  ng-click="null" style="background-color:white;" onclick="window.open('http://www.latimes.com/politics/essential/la-pol-ca-essential-politics-updates-here-s-another-glimpse-of-kamala-harris-1520551387-htmlstory.html);">
+                      <div class="md-list-item-text" layout="column">
+                        <h3>Here's another glimpse of Kamala Harris' finances as she looks to 2020</h3>
+                        <h4>By The LA TIMES</h4>
+                        <p>California Sen. Kamala Harris, who is serving her first term, has an estimated net worth that puts her financially near the middle of the pack in a delegation that includes both the richest and poorest members of Congress.</p>
+                      </div>
+                    </md-list-item>
+                    <hr></hr>
+                    <md-list-item class="md-3-line"  ng-click="null" style="background-color:white;" onclick="window.open('https://www.realclearpolitics.com/video/2018/03/08/kamala_harris_on_immigration_sessions_wants_to_roll_back_the_clock_california_represents_the_future_.html');">
+                      <div class="md-list-item-text" layout="column">
+                        <h3>Kamala Harris On Immigration: Sessions Wants To Roll Back The Clock, "California Represents The Future"</h3>
+                        <h4>By REALCLEAR POLITICS</h4>
+                        <p>Sen. Kamala Harris (D-CA) appeared on MSNBC's All In with host Chris Hayes Wednesday night to discuss Attorney General Jeff Sessions' speech on California ignoring the nation's immigration laws and likening it to nullification.</p>
+                      </div>
+                    </md-list-item>
+
+                  </md-list>
+                </md-content>
               </div>
-            </md-card>
+            </div>
+          </md-card>
 
-            <!-- <div class="scrollbar scrollbar-primary">
-                <div class="force-overflow">
-            </div> -->
+          <!-- <div class="scrollbar scrollbar-primary">
+            <div class="force-overflow">
+            </div>
+          </div> -->
+
+      </div>
     </div>
   </div>
 </div>
