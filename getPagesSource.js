@@ -73,6 +73,7 @@ function senti_calculation(text_arr) {
     var sum_p = 0;
     var nP = 0; //number of positive scores
     var i = 0;
+    var length = text_arr.length;
     while(i < text_arr.length) {
         score = text_arr[i];
         if(score == 0.5){
@@ -96,6 +97,7 @@ function senti_calculation(text_arr) {
             }
             else {
                 sum += (sum_p + (score - 0.5) * nP) / (1.0*(nP + 1));
+                length -= nP + 1;
                 nP = 0;
                 sum_p = 0;
             }
@@ -103,7 +105,7 @@ function senti_calculation(text_arr) {
         }
         i++;
     }
-    calculation = sum / (1.0 * text_arr.length);
+    calculation = sum / (1.0 * length);
     console.log("here is the calculation: ", calculation);
     return calculation
 
